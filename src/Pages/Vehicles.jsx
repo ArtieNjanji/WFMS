@@ -1,0 +1,19 @@
+import Header from '../components/Header'
+import SideBar from '../components/SideBar'
+
+function Vehicles() {
+  return (
+    <div>
+      <Header />
+      <div className='container'>
+        <SideBar />
+
+        <div className='content'>
+          <h1>Vehicles</h1>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Vehicles
