@@ -1,7 +1,21 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
 
+import { auth } from '../config/firebase'
+import { signOut } from 'firebase/auth'
+
 const Header = () => {
+  const navigate = useNavigate()
+
+  const logout = async () => {
+    try {
+      await signOut(auth)
+      navigate('/login')
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <div className='header'>
       <Link to='/' className='logo'>
@@ -12,7 +26,7 @@ const Header = () => {
           <FaSignInAlt /> Login
         </Link>
 
-        <Link to='/' className='link-item'>
+        <Link to='/' className='link-item' onClick={logout}>
           <FaSignOutAlt /> Logout
         </Link>
       </div>

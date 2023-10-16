@@ -2,18 +2,17 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
 
-import 'react-toastify/dist/ReactToastify.css'
-
 import { auth, provider } from '../config/firebase'
-import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 
 //import Header from '../components/Header'
 import Input from '../components/Input'
 //import Button from '../components/Button'
 
-const Login = () => {
+const Register = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [cpassword, setCPassword] = useState('')
   const [error, setError] = useState({})
 
   const navigate = useNavigate()
@@ -25,7 +24,6 @@ const Login = () => {
   const validate = () => {
     if (!email) {
       onError('email', 'Email cannot be blank')
-
       return false
     }
     if (!password) {
@@ -39,7 +37,7 @@ const Login = () => {
     if (!validate()) return
     console.log(email, password)
     try {
-      await signInWithEmailAndPassword(auth, email, password)
+      await createUserWithEmailAndPassword(auth, email, password)
       navigate('/')
     } catch (error) {
       console.error(error)
@@ -63,7 +61,7 @@ const Login = () => {
           </div>
         </div>
         <div className='form-control'>
-          <h1>Login to continue</h1>
+          <h1>SignUp to continue</h1>
           <Input
             name='Email'
             type='email'
@@ -81,12 +79,21 @@ const Login = () => {
             error={error.password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <Input
+            name='Password'
+            type='password'
+            placeholder='Confirm your password'
+            password={true}
+            value={cpassword}
+            error={error.cpassword}
+            onChange={(e) => setCPassword(e.target.value)}
+          />
 
-          <Link to='' className='forgot-password'>
-            Forgot Password?
+          <button onClick={onSubmit}>Sign Up</button>
+
+          <Link to='/login' className='forgot-password'>
+            Already have an account? Login
           </Link>
-
-          <button onClick={onSubmit}>Sign In</button>
           <div className='line'>
             <div className='lines'></div>
             <span>OR</span>
@@ -94,7 +101,7 @@ const Login = () => {
           </div>
 
           <Link className='signup' onClick={singInWithG}>
-            <FcGoogle size={30} /> Sign in with google
+            <FcGoogle size={30} /> Sign up with google
           </Link>
         </div>
       </div>
@@ -102,4 +109,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register

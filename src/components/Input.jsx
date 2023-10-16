@@ -20,9 +20,9 @@ function Input({
     <div className='input-container'>
       <div className='input'>
         {name === 'Email' ? (
-          <FaUserCircle className='icon' />
+          <FaUserCircle className='icon' size={20} />
         ) : name === 'Password' ? (
-          <FaLock className='icon' />
+          <FaLock className='icon' size={20} />
         ) : (
           <FaSignInAlt className='icon' />
         )}

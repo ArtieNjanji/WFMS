@@ -199,7 +199,7 @@ button {
   align-items: center;
   width: 100%;
   gap: 1.5rem;
-  padding: 1rem 0.5rem 2rem 0.5rem;
+  padding: 0.5rem 0.5rem 2rem 0.5rem;
 }
 
 .wfms-container {
@@ -229,30 +229,22 @@ button {
 }
 .wfms h1 {
   color: #72ee80;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 900;
 }
 .forgot-password {
   text-decoration: none;
   color: #000;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  margin-top: -0.4rem;
+  margin-top: -1rem;
   &:hover {
     transform: scale(1.1);
   }
+  margin-right: auto;
+  margin-left: 1rem;
 }
-.forgot-password Link {
-  color: #72ee80;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-top: -0.4rem;
 
-  &:hover {
-    transform: scale(1.1);
-  }
-}
 .line {
   display: flex;
   flex-direction: row;
@@ -270,6 +262,23 @@ button {
   height: 2px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+.signup {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: -0.4rem;
+  &:hover {
+    /* transform: scale(1.1); */
+    color: #72ee80;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* Responsive */
