@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import { NavLink } from 'react-router-dom'
 import { MdDashboard, MdOutlineSettings, MdBuild } from 'react-icons/md'
 import { FaSignOutAlt, FaTools, FaTractor } from 'react-icons/fa'
@@ -7,9 +5,20 @@ import { BsCashCoin } from 'react-icons/bs'
 import { GiCow } from 'react-icons/Gi'
 import { BiCrop } from 'react-icons/Bi'
 import { RiFileList3Line } from 'react-icons/Ri'
-import { AiOutlineDashboard } from 'react-icons/Ai'
+
+import { useSelector, useDispatch } from 'react-redux'
+import { selectStockMan } from '../features/stockSlice'
+import { toggleVisible } from '../features/stockSlice'
 
 function SideBar() {
+  const dispatch = useDispatch()
+
+  const { stock, visible } = useSelector(selectStockMan)
+
+  const onClickSTM = () => {
+    dispatch(toggleVisible())
+  }
+  console.log(visible)
   return (
     <>
       <div className='sideBar'>
@@ -25,9 +34,30 @@ function SideBar() {
         <NavLink to='/vehicles' className='sidebar-items'>
           <FaTractor /> Vehicles
         </NavLink>
-        <NavLink to='/operations' className='sidebar-items'>
-          <MdBuild /> Operations
-        </NavLink>
+        <div>
+          <NavLink
+            to='/stock-management'
+            className='sidebar-items'
+            onClick={onClickSTM}
+          >
+            <MdBuild /> Stock Management
+          </NavLink>
+          {visible && (
+            <div className='sub-menu'>
+              {stock.map((item, index) => {
+                return (
+                  <NavLink
+                    key={index}
+                    to={`/stock-management/${item.toLowerCase()}`}
+                    className='sub-menu-items'
+                  >
+                    {item}
+                  </NavLink>
+                )
+              })}
+            </div>
+          )}
+        </div>
         <NavLink to='/reports' className='sidebar-items'>
           <RiFileList3Line /> Reports
         </NavLink>

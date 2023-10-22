@@ -1,6 +1,7 @@
-import Header from '../components/Header'
-import SideBar from '../components/SideBar'
-function Settings() {
+import Header from '../../components/Header'
+import SideBar from '../../components/SideBar'
+
+function Receipts() {
   return (
     <div>
       <Header />
@@ -8,11 +9,11 @@ function Settings() {
         <SideBar />
 
         <div className='content'>
-          <h1>Settings</h1>
+          <h1>Receipts</h1>
         </div>
       </div>
     </div>
   )
 }
 
-export default Settings
+export default Receipts

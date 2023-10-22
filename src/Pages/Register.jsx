@@ -46,7 +46,9 @@ const Register = () => {
   const singInWithG = async () => {
     try {
       await signInWithPopup(auth, provider)
-      navigate('/')
+      if (auth.currentUser) {
+        navigate('/')
+      }
     } catch (error) {
       console.error(error)
     }

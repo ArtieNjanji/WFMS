@@ -1,7 +1,7 @@
-import Header from '../components/Header'
-import SideBar from '../components/SideBar'
+import Header from '../../components/Header'
+import SideBar from '../../components/SideBar'
 
-function Operations() {
+function Issues() {
   return (
     <div>
       <Header />
@@ -9,11 +9,11 @@ function Operations() {
         <SideBar />
 
         <div className='content'>
-          <h1>Operations</h1>
+          <h1>Issues</h1>
         </div>
       </div>
     </div>
   )
 }
 
-export default Operations
+export default Issues

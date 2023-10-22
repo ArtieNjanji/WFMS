@@ -8,9 +8,7 @@ function Vehicles() {
       <div className='container'>
         <SideBar />
 
-        <div className='content'>
-          <h1>Vehicles</h1>
-        </div>
+        <div className='content'>{/* <h1>Vehicles</h1> */}</div>
       </div>
     </div>
   )
