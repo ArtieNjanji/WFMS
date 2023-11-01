@@ -1,5 +1,5 @@
-import Header from '../../components/Header'
-import SideBar from '../../components/SideBar'
+import Header from '../../components/Header';
+import SideBar from '../../components/SideBar';
 
 function Receipts() {
   return (
@@ -13,7 +13,7 @@ function Receipts() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Receipts
+export default Receipts;

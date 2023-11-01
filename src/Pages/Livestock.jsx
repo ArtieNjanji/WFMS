@@ -1,5 +1,5 @@
-import Header from '../components/Header'
-import SideBar from '../components/SideBar'
+import Header from '../components/Header';
+import SideBar from '../components/SideBar';
 
 function Livestock() {
   return (
@@ -13,7 +13,7 @@ function Livestock() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Livestock
+export default Livestock;

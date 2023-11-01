@@ -1,5 +1,5 @@
-import Header from '../../components/Header'
-import SideBar from '../../components/SideBar'
+import Header from '../../components/Header';
+import SideBar from '../../components/SideBar';
 
 function Issues() {
   return (
@@ -7,13 +7,29 @@ function Issues() {
       <Header />
       <div className='container'>
         <SideBar />
-
         <div className='content'>
-          <h1>Issues</h1>
+          <div className='cards'>
+            <div className='card'>
+              <h2>Total Issues</h2>
+              <p>num</p>
+            </div>
+            <div className='card'>
+              <h2>Total Issues</h2>
+              <p>num</p>
+            </div>
+            <div className='card'>
+              <h2>Total Issues</h2>
+              <p>num</p>
+            </div>
+            <div className='card'>
+              <h2>Total Issues</h2>
+              <p>num</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Issues
+export default Issues;
